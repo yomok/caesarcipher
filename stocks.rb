@@ -13,7 +13,7 @@ def stock_picker(prices)
       end
     end
   end
-  "buy on day #{buy_day}, sell on day #{sell_day} for a profit of #{max_money}"
+  "buy on day #{buy_day}, sell on day #{sell_day}, for a profit of #{max_money}"
 end
 
 
