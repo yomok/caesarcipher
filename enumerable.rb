@@ -91,10 +91,16 @@ module Enumerable
     end
   end
   
-  def my_map
+  def my_map(proc = nil)
     result = []
-    self.my_each do |x|
-      result << yield(x)
+    if block_given?
+      self.my_each do |x|
+        result << yield(x)
+      end
+    elsif proc
+      self.my_each do |x|
+        result << proc.call(x)
+      end
     end
     result
   end
@@ -112,8 +118,15 @@ module Enumerable
     end
     return total
   end
+  
+  
 
 
   
 end
+
+def multiply_els(array)
+  array.my_inject{|x, y| x * y }
+end
+
 
