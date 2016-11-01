@@ -20,6 +20,9 @@ class LinkedList
       @head = new_node
       @tail = new_node
     else
+      #or just 
+      #@tail.next_node = new_node
+      #@tail = new_node check dan hoying github
       node = @head
       until node.next_node.nil?
         node = node.next_node
